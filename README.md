@@ -1,1 +1,0 @@
-# LumiSafe-Atividade-Pablo-Juan
