@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Criar Conta</title>
+    <link rel="stylesheet" href="../styles/cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">✨</div>
+        <h1>Criar Conta</h1>
+        <p class="subtitle">Preencha os dados para começar</p>
+        
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                </div>
+                <span class="error-message" id="nomeError">O nome deve ter pelo menos 3 caracteres</span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">📧</span>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <span class="error-message" id="emailError">Por favor, insira um e-mail válido</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">🔒</span>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <span class="error-message" id="senhaError">A senha deve ter no mínimo 6 caracteres</span>
+                <div class="password-strength">
+                    <div class="strength-bar" id="strengthBar"></div>
+                </div>
+                <span class="password-hint" id="strengthText"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmarSenha">Confirmar Senha</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">🔐</span>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Digite a senha novamente" required>
+                </div>
+                <span class="error-message" id="confirmarSenhaError">As senhas não coincidem</span>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="termos" required>
+                <label for="termos">Aceito os <a href="#termos">termos de uso</a> e <a href="#privacidade">política de privacidade</a></label>
+            </div>
+            
+            <button type="submit">CRIAR CONTA</button>
+            
+            <div class="divider">ou</div>
+            
+            <div class="links">
+                Já tem uma conta? <a href="login.html">Fazer login</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="../scripts/cadastro.js"></script>
+</body>
+</html>

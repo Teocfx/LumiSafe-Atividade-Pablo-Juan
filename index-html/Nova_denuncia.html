@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Denúncia - LumiSafe</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../styles/Nova_denuncia.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">💡</span>
+            <h2>LumiSafe</h2>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">➕</span>
+                Nova Denúncia
+            </a>
+            <a href="#minhas-denuncias" class="nav-item">
+                <span class="nav-icon">📋</span>
+                Minhas Denúncias
+            </a>
+            <a href="#perfil" class="nav-item">
+                <span class="nav-icon">👤</span>
+                Perfil
+            </a>
+        </nav>
+
+        <div class="user-section">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <p class="user-name">João Silva</p>
+                <a href="#logout" class="logout">Sair</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Nova Denúncia</h1>
+                <p class="subtitle">Reporte um problema de iluminação pública</p>
+            </div>
+            <a href="dashboard.html" class="btn-secondary">
+                <span>←</span> Voltar
+            </a>
+        </header>
+
+        <!-- Formulário -->
+        <div class="form-container">
+            <form id="denunciaForm">
+                <!-- Seção 1: Informações Básicas -->
+                <div class="form-section">
+                    <h3 class="section-title">📝 Informações da Denúncia</h3>
+                    
+                    <div class="form-group">
+                        <label for="titulo">Título *</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Poste sem iluminação" required>
+                        <span class="error-message" id="tituloError">O título deve ter pelo menos 5 caracteres</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição Detalhada *</label>
+                        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva o problema com detalhes..." required></textarea>
+                        <span class="error-message" id="descricaoError">A descrição deve ter pelo menos 20 caracteres</span>
+                        <span class="char-counter" id="charCounter">0 / 500 caracteres</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Problema *</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Selecione o tipo</option>
+                            <option value="lampada-queimada">Lâmpada queimada</option>
+                            <option value="poste-danificado">Poste danificado</option>
+                            <option value="fiacao-exposta">Fiação exposta</option>
+                            <option value="iluminacao-fraca">Iluminação fraca</option>
+                            <option value="sem-iluminacao">Sem iluminação</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Seção 2: Localização -->
+                <div class="form-section">
+                    <h3 class="section-title">📍 Localização</h3>
+                    
+                    <div class="form-group">
+                        <label for="endereco">Endereço *</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" required>
+                        <button type="button" class="btn-location" id="btnUseLocation">
+                            📍 Usar minha localização
+                        </button>
+                    </div>
+
+                    <div class="map-wrapper">
+                        <div id="map"></div>
+                        <p class="map-hint">💡 Clique no mapa para marcar a localização exata</p>
+                    </div>
+
+                    <div class="coordinates-display" id="coordinatesDisplay">
+                        <span>📌 Coordenadas: <strong id="coordsText">Não selecionada</strong></span>
+                    </div>
+                </div>
+
+                <!-- Seção 3: Fotos -->
+                <div class="form-section">
+                    <h3 class="section-title">📸 Fotos do Problema</h3>
+                    
+                    <div class="form-group">
+                        <label>Adicione fotos (opcional)</label>
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                            <div class="upload-content">
+                                <span class="upload-icon">📷</span>
+                                <p>Clique ou arraste fotos aqui</p>
+                                <span class="upload-hint">PNG, JPG até 5MB cada</span>
+                            </div>
+                        </div>
+                        <div class="preview-container" id="previewContainer"></div>
+                    </div>
+                </div>
+
+                <!-- Seção 4: Urgência -->
+                <div class="form-section">
+                    <h3 class="section-title">⚡ Nível de Urgência</h3>
+                    
+                    <div class="urgencia-options">
+                        <label class="urgencia-card">
+                            <input type="radio" name="urgencia" value="baixa" required>
+                            <div class="urgencia-content baixa">
+                                <span class="urgencia-icon">🟢</span>
+                                <h4>Baixa</h4>
+                                <p>Pode esperar</p>
+                            </div>
+                        </label>
+                        
+                        <label class="urgencia-card">
+                            <input type="radio" name="urgencia" value="media" required>
+                            <div class="urgencia-content media">
+                                <span class="urgencia-icon">🟡</span>
+                                <h4>Média</h4>
+                                <p>Atenção necessária</p>
+                            </div>
+                        </label>
+                        
+                        <label class="urgencia-card">
+                            <input type="radio" name="urgencia" value="alta" required>
+                            <div class="urgencia-content alta">
+                                <span class="urgencia-icon">🔴</span>
+                                <h4>Alta</h4>
+                                <p>Urgente!</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botões de ação -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" onclick="window.location.href='dashboard.html'">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-submit">
+                        <span>✓</span> Enviar Denúncia
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="..//scripts/Nova_denuncia.js"></script>
+</body>
+</html>

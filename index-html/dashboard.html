@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - LumiSafe</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">💡</span>
+            <h2>LumiSafe</h2>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="#nova-denuncia" class="nav-item">
+                <span class="nav-icon">➕</span>
+                Nova Denúncia
+            </a>
+            <a href="#minhas-denuncias" class="nav-item">
+                <span class="nav-icon">📋</span>
+                Minhas Denúncias
+            </a>
+            <a href="#perfil" class="nav-item">
+                <span class="nav-icon">👤</span>
+                Perfil
+            </a>
+        </nav>
+
+        <div class="user-section">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <p class="user-name">João Silva</p>
+                <a href="#logout" class="logout">Sair</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Dashboard</h1>
+                <p class="subtitle">Acompanhe as denúncias de iluminação pública</p>
+            </div>
+            <button class="btn-primary" id="btnNovaDenuncia">
+                <span>➕</span> Nova Denúncia
+            </button>
+        </header>
+
+        <!-- Cards de Estatísticas -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon pending">⏳</div>
+                <div class="stat-info">
+                    <p class="stat-label">Pendentes</p>
+                    <h3 class="stat-value" id="statPendentes">24</h3>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon progress">🔧</div>
+                <div class="stat-info">
+                    <p class="stat-label">Em Andamento</p>
+                    <h3 class="stat-value" id="statAndamento">12</h3>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon resolved">✅</div>
+                <div class="stat-info">
+                    <p class="stat-label">Resolvidas</p>
+                    <h3 class="stat-value" id="statResolvidas">48</h3>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon total">📊</div>
+                <div class="stat-info">
+                    <p class="stat-label">Total</p>
+                    <h3 class="stat-value" id="statTotal">84</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="todas">Todas</button>
+            <button class="filter-btn" data-filter="pendente">Pendentes</button>
+            <button class="filter-btn" data-filter="andamento">Em Andamento</button>
+            <button class="filter-btn" data-filter="resolvida">Resolvidas</button>
+        </div>
+
+        <!-- Mapa e Lista -->
+        <div class="content-grid">
+            <!-- Mapa -->
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+
+            <!-- Lista de Denúncias -->
+            <div class="denuncias-list">
+                <h3>Denúncias Recentes</h3>
+                <div id="listaDenuncias"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="..//scripts/dashboard.js"></script>
+</body>
+</html>

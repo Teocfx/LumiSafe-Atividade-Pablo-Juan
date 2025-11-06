@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Denúncias - LumiSafe </title>
+    <link rel="stylesheet" href="../styles/minhasdenuncias.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">💡</span>
+            <h2>LumiSafe</h2>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                Dashboard
+            </a>
+            <a href="nova-denuncia.html" class="nav-item">
+                <span class="nav-icon">➕</span>
+                Nova Denúncia
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">📋</span>
+                Minhas Denúncias
+            </a>
+            <a href="#perfil" class="nav-item">
+                <span class="nav-icon">👤</span>
+                Perfil
+            </a>
+        </nav>
+
+        <div class="user-section">
+            <div class="user-avatar">JD</div>
+            <div class="user-info">
+                <p class="user-name">João Silva</p>
+                <a href="#logout" class="logout">Sair</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>Minhas Denúncias</h1>
+                <p class="subtitle">Acompanhe o status das suas denúncias</p>
+            </div>
+            <button class="btn-primary" onclick="window.location.href='nova-denuncia.html'">
+                <span>➕</span> Nova Denúncia
+            </button>
+        </header>
+
+        <!-- Cards de Resumo -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="summary-icon pendente">⏳</div>
+                <div class="summary-info">
+                    <h3 id="totalPendentes">3</h3>
+                    <p>Pendentes</p>
+                </div>
+            </div>
+            
+            <div class="summary-card">
+                <div class="summary-icon andamento">🔧</div>
+                <div class="summary-info">
+                    <h3 id="totalAndamento">2</h3>
+                    <p>Em Andamento</p>
+                </div>
+            </div>
+            
+            <div class="summary-card">
+                <div class="summary-icon resolvida">✅</div>
+                <div class="summary-info">
+                    <h3 id="totalResolvidas">5</h3>
+                    <p>Resolvidas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros e Busca -->
+        <div class="controls">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Buscar por título ou ID...">
+            </div>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="todas">Todas</button>
+                <button class="filter-btn" data-filter="pendente">Pendentes</button>
+                <button class="filter-btn" data-filter="andamento">Em Andamento</button>
+                <button class="filter-btn" data-filter="resolvida">Resolvidas</button>
+            </div>
+
+            <select id="sortSelect" class="sort-select">
+                <option value="recente">Mais recentes</option>
+                <option value="antiga">Mais antigas</option>
+                <option value="urgencia">Por urgência</option>
+            </select>
+        </div>
+
+        <!-- Lista de Denúncias -->
+        <div class="denuncias-container" id="denunciasContainer">
+            <!-- Denúncias serão inseridas aqui via JavaScript -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-icon">📭</div>
+            <h3>Nenhuma denúncia encontrada</h3>
+            <p>Você ainda não fez nenhuma denúncia ou não há resultados para sua busca.</p>
+            <button class="btn-primary" onclick="window.location.href='nova-denuncia.html'">
+                Fazer primeira denúncia
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Detalhes da Denúncia</h2>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo será inserido via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/minhasdenuncias.js"></script>
+</body>
+</html>
