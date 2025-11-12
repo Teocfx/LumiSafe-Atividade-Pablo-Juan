@@ -33,6 +33,7 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 - JavaScript 
 - HTML5 / CSS3
 - Leaflet.js
+- bootstrap  5.3
 
 **Backend:**
 - Python 3.11
@@ -100,10 +101,10 @@ Contribuições são bem-vindas! Por favor, siga estes passos:
 
 ## 👥 Equipe
 
-- Teófilo da Costa - 1362321634
-- Flávio Eduardo Nascimento
-- Miquéias Oliveira
-- Felipe Maciel
+- Teófilo da Costa - RA 1362321634
+- Flávio Eduardo Nascimento - RA 1362413582 
+- Miquéias Oliveira - RA 1362219767
+- Felipe Maciel - RA 1362419474
 
 
 **Status:** 🚧 Em desenvolvimento
