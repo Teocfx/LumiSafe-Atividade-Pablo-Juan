@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minhas Denúncias - LumiSafe</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="d-flex">
+
+    <!-- Sidebar -->
+    <nav class="bg-primary border-end vh-100 p-3 d-flex flex-column justify-content-between" style="width: 260px;">
+      <div>
+        <div class="d-flex align-items-center mb-4">
+          <span class="fs-3 me-2">
+            <i class="bi bi-lightbulb-fill"; style="color: white;"></i> <!-- Ícone de lâmpada -->
+          </span>
+          <h4 class="fw-bold mb-0; text-white ">LumiSafe</h4>
+        </div>
+
+        <div class="nav flex-column">
+          <a href="dashboard.html" class="nav-link text-white py-2">
+            <i class="bi bi-house me-2"></i> Dashboard
+          </a>
+          <a href="Nova_denuncia.html" class="nav-link text-white py-2">
+            <i class="bi bi-plus-circle me-2"></i> Nova Denúncia
+          </a>
+          <a href="minhasdenuncias.html" class="nav-link active bg-primary text-white rounded py-2">
+            <i class="bi bi-clipboard-data me-2"></i> Minhas Denúncias
+          </a>
+          <a href="#perfil" class="nav-link text-white py-2">
+            <i class="bi bi-person-circle me-2"></i> Perfil
+          </a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center border-top pt-3">
+        <div class="bg-primary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">JD</div>
+        <div>
+          <p class="m-0 fw-semibold">João Silva</p>
+          <a href="#logout" class="text-decoration-none text-danger small">Sair</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="flex-grow-1 p-4">
+
+      <!-- Header -->
+      <header class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="fw-bold mb-1">Minhas Denúncias</h2>
+          <p class="text-muted mb-0">Acompanhe o status das suas denúncias</p>
+        </div>
+        <a class="btn btn-primary" onclick="window.location.href='Nova_denuncia.html'">
+          <i class="bi bi-plus-lg me-1"></i> Nova Denúncia
+        </a>
+      </header>
+
+      <!-- Cards de Resumo -->
+      <section class="row g-3 mb-4">
+
+        <!-- Card Pendentes -->
+        <div class="col-md-4">
+          <div class="card text-center border-0 shadow-sm py-3">
+            <div class="fs-2 mb-2">🟡</div>
+            <h4 class="fw-bold mb-0">3</h4>
+            <p class="text-muted mb-0">Pendentes</p>
+          </div>
+        </div>
+
+        <!-- Card Em Andamento -->
+        <div class="col-md-4">
+          <div class="card text-center border-0 shadow-sm py-3">
+            <div class="fs-2 mb-2">🔵</div>
+            <h4 class="fw-bold mb-0">2</h4>
+            <p class="text-muted mb-0">Em Andamento</p>
+          </div>
+        </div>
+
+        <!-- Card Resolvidas -->
+        <div class="col-md-4">
+          <div class="card text-center border-0 shadow-sm py-3">
+            <div class="fs-2 mb-2">🟢</div>
+            <h4 class="fw-bold mb-0">5</h4>
+            <p class="text-muted mb-0">Resolvidas</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filtros e Busca -->
+      <section class="d-flex flex-wrap gap-3 align-items-center mb-4">
+        <div class="input-group" style="max-width: 300px;">
+          <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+          <input type="text" id="searchInput" class="form-control border-start-0" placeholder="Buscar por título ou ID...">
+        </div>
+
+        
+        <div class="btn-group">
+          <button class="btn btn-outline-primary active">Todas</button>
+          <button class="btn btn-outline-primary">Pendentes</button>
+          <button class="btn btn-outline-primary">Em Andamento</button>
+          <button class="btn btn-outline-primary">Resolvidas</button>
+        </div>
+
+        <select class="form-select w-auto ms-auto">
+          <option>Mais recentes</option>
+          <option>Mais antigas</option>
+          <option>Por urgência</option>
+        </select>
+      </section>
+
+      <!-- Lista de Denúncias -->
+      <section class="row g-3">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#detailsModal">
+            <div class="card-body d-flex gap-3 align-items-start">
+              <div style="right: 100px; width: 4px; height: 100px; background-color: #FFC107;" ></div>
+              <div class="flex-grow-1">
+                <h5 class="card-title mb-1">Poste sem iluminação</h5>
+                <p class="text-muted small mb-2">Rua das Flores, 123 - Centro</p>
+                <span class="badge bg-warning text-dark">Pendente</span>
+              </div>
+              <div class="text-end small text-muted">
+                <div>ID #234</div>
+                <div>03/11/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#detailsModal">
+            <div class="card-body d-flex gap-3 align-items-start">
+              <div style="right: 100px; width: 4px; height: 100px; background-color: #0DCAF0;" ></div>
+              <div class="flex-grow-1">
+                <h5 class="card-title mb-1">Poste danificado</h5>
+                <p class="text-muted small mb-2">Av. Brasil, 890 - Industrial</p>
+                <span class="badge bg-info text-dark">Em Andamento</span>
+              </div>
+              <div class="text-end small text-muted">
+                <div>ID #187</div>
+                <div>29/10/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#detailsModal">
+            <div class="card-body d-flex gap-3 align-items-start">
+              <div style="right: 100px; width: 4px; height: 100px; background-color: #198754;" ></div>
+              <div class="flex-grow-1">
+                <h5 class="card-title mb-1">Iluminação restaurada</h5>
+                <p class="text-muted small mb-2">Rua Esperança, 45 - Centro</p>
+                <span class="badge bg-success">Resolvida</span>
+              </div>
+              <div class="text-end small text-muted">
+                <div>ID #166</div>
+                <div>25/10/2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Estado vazio -->
+      <section id="emptyState" class="text-center py-5 d-none">
+        <div class="fs-1 mb-3">📭</div>
+        <h4>Nenhuma denúncia encontrada</h4>
+        <p class="text-muted mb-3">Você ainda não fez nenhuma denúncia ou não há resultados para sua busca.</p>
+        <a href="nova-denuncia.html" class="btn btn-primary">Fazer primeira denúncia</a>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Modal Detalhes -->
+  <div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="detailsModalLabel">Detalhes da Denúncia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Título:</strong> Poste sem iluminação</p>
+          <p><strong>Endereço:</strong> Rua das Flores, 123 - Centro</p>
+          <p><strong>Status:</strong> <span class="badge bg-warning text-dark">Pendente</span></p>
+          <p><strong>Descrição:</strong> A lâmpada do poste está queimada há mais de 3 dias, causando falta de iluminação na rua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
