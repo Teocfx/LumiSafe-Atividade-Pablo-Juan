@@ -17,10 +17,10 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 - 🚶 **Registro de Trajetos**: Mapeie ruas inteiras através da geolocalização
 
 ## 📚 Documentação
-- [Requisitos do Sistema](requisitos-lumisafe.md)
-- [Guia do Desenvolvedor](DEVELOPER.MD)
-- [Guia do Usuário](USER_GUIDE.MD)
-- [Diagrama de Classes UML](DiagramaDeClasseUML.drawio.pdf)
+- [Requisitos do Sistema](assets/requisitos-lumisafe.md)
+- [Guia do Desenvolvedor](assets/DEVELOPER.MD)
+- [Guia do Usuário](assets/USER_GUIDE.MD)
+- [Diagrama de Classes UML](assets/DiagramaDeClasseUML.drawio.pdf)
 
 ## 🛠️ Tecnologias
 
