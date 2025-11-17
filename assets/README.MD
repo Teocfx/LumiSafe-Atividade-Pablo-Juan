@@ -19,13 +19,13 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 ## 📚 Documentação
 
 ### Requisitos
-- [Requisitos Funcionais e Não Funcionais](./docs/requirements/requisitos.md)
-- [Histórias de Usuário](./docs/requirements/requisitos.md#histórias-de-usuário-hu)
-- [Casos de Uso](./docs/use-cases/casos-de-uso.md)
+- [Requisitos Funcionais e Não Funcionais](./assets/requisitos.md)
+- [Histórias de Usuário](./assets/requisitos.md#histórias-de-usuário-hu)
+- [Casos de Uso](./assets/use-cases/casos-de-uso.md)
 
 ### Diagramas
-- [Diagrama de Classes UML](./docs/diagrams/class-diagram.png)
-- [Arquivo Editável (.drawio)](./docs/diagrams/class-diagram.drawio)
+- [Diagrama de Classes UML](./assets/diagrams/class-diagram.png)
+- [Arquivo Editável (.drawio)](./assets/diagrams/class-diagram.drawio)
 
 ## 🛠️ Tecnologias
 
