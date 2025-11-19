@@ -1,4 +1,4 @@
-# Requisitos do Sistema Lumisafe
+# Documentação do Sistema Lumisafe
 
 ## 📖 Visão Geral
 
