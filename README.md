@@ -20,7 +20,7 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 ## 📚 Documentação
 
 ### Requisitos
-- [Requisitos Funcionais e Não Funcionais][Histórias de Usuário][Casos de Uso](assets/requisitos-lumisafe.md)
+- [Requisitos e documentação](assets/requisitos-lumisafe.md)
 - [Guia de usuário](assets/USER_GUIDE.MD)
 - [Guia desenvolvedor](assets/DEVELOPER.MD)
 
