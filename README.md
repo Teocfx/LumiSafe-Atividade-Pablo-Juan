@@ -20,13 +20,16 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 ## 📚 Documentação
 
 ### Requisitos
-- [Requisitos Funcionais e Não Funcionais](requisitos-lumisafe.md)
-- [Histórias de Usuário](requisitos-lumisafe.md#historias-de-usuario-hu)
-- [Casos de Uso](assets/use-cases/casos-de-uso.md)
+- [Requisitos Funcionais e Não Funcionais][Histórias de Usuário][Casos de Uso](assets/requisitos-lumisafe.md)
+- [Guia de usuário](assets/USER_GUIDE.MD)
+- [Guia desenvolvedor](assets/DEVELOPER.MD)
 
-### Diagramas
-- [Diagrama de Classes UML](DiagramaDeClasseUML.drawio.pdf)
-- [Arquivo Editável .drawio](DiagramaDeClasseUML.drawio)
+### Diagrama
+- [Diagrama de Classes UML](assets/DiagramaDeClasseUML.drawio.pdf)
+
+
+  ### Protótipo
+  - https://www.figma.com/proto/7cGHRmeTa2OlPg1LfakbPi/LumiSafe-Prot%C3%B3tipo?node-id=2-31&p=f&t=W20v42m5gnnFsqqJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A31
 
 ## 🛠️ Tecnologias
 
@@ -41,6 +44,9 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 - Django 5.0
 - Django REST Framework
 - SQLite
+
+  **Prototipação**
+ - Figma
 
 ## 🚀 Como Rodar o Projeto
 
