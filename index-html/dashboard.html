@@ -11,6 +11,31 @@
 
   <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script>
+const map = L.map('map').setView([-3.727, -38.526], 14); // posição inicial (exemplo)
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+function carregarDenuncias() {
+    fetch("http://localhost:5000/reports")
+    .then(r => r.json())
+    .then(data => {
+        L.geoJSON(data, {
+            onEachFeature: function(feature, layer) {
+                const p = feature.properties;
+                let popup = `<strong>${p.title || "Sem título"}</strong><br>${p.description || ""}<br>Status: ${p.status}`;
+                if (p.photos.length > 0) {
+                    popup += `<br><img src="${p.photos[0]}" width="120">`;
+                }
+                layer.bindPopup(popup);
+            }
+        }).addTo(map);
+    });
+}
+
+carregarDenuncias();
+</script>
+
 
   <style>
     body {
@@ -167,6 +192,18 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../scripts/dashboard.js"></script>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<script>
+const socket = io("http://localhost:5000");
+
+// Recebe nova denúncia em tempo real
+socket.on("new_report", (data) => {
+    L.marker([data.lat, data.lng])
+        .addTo(map)
+        .bindPopup(`<b>${data.title}</b><br>${data.description}`);
+});
+</script>
+
 
 </body>
 </html>
