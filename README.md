@@ -30,6 +30,9 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 
   ### Protótipo
   - https://www.figma.com/proto/7cGHRmeTa2OlPg1LfakbPi/LumiSafe-Prot%C3%B3tipo?node-id=2-31&p=f&t=W20v42m5gnnFsqqJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A31
+ 
+- ### Slides do projeto
+- https://new.express.adobe.com/publishedV2/urn:aaid:sc:US:256a0254-1af9-4710-84fd-f9c6900e2726
 
 ## 🛠️ Tecnologias
 
