@@ -117,61 +117,34 @@
       </section>
 
       <!-- Lista de Denúncias -->
-      <section class="row g-3">
-        <!-- Card 1 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#detailsModal">
-            <div class="card-body d-flex gap-3 align-items-start">
-              <div style="right: 100px; width: 4px; height: 100px; background-color: #FFC107;" ></div>
-              <div class="flex-grow-1">
-                <h5 class="card-title mb-1">Poste sem iluminação</h5>
-                <p class="text-muted small mb-2">Rua das Flores, 123 - Centro</p>
-                <span class="badge bg-warning text-dark">Pendente</span>
-              </div>
-              <div class="text-end small text-muted">
-                <div>ID #234</div>
-                <div>03/11/2025</div>
-              </div>
-            </div>
-          </div>
-        </div>
+     <script>
+const token = localStorage.getItem("token");
 
-        <!-- Card 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#detailsModal">
-            <div class="card-body d-flex gap-3 align-items-start">
-              <div style="right: 100px; width: 4px; height: 100px; background-color: #0DCAF0;" ></div>
-              <div class="flex-grow-1">
-                <h5 class="card-title mb-1">Poste danificado</h5>
-                <p class="text-muted small mb-2">Av. Brasil, 890 - Industrial</p>
-                <span class="badge bg-info text-dark">Em Andamento</span>
-              </div>
-              <div class="text-end small text-muted">
-                <div>ID #187</div>
-                <div>29/10/2025</div>
-              </div>
-            </div>
-          </div>
-        </div>
+fetch("http://localhost:5000/me/reports", {
+    headers: { "Authorization": "Bearer " + token }
+})
+.then(r => r.json())
+.then(denuncias => {
+    const container = document.querySelector(".row.g-3");
+    container.innerHTML = "";
 
-        <!-- Card 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card border-0 shadow-sm h-100" role="button" data-bs-toggle="modal" data-bs-target="#detailsModal">
-            <div class="card-body d-flex gap-3 align-items-start">
-              <div style="right: 100px; width: 4px; height: 100px; background-color: #198754;" ></div>
-              <div class="flex-grow-1">
-                <h5 class="card-title mb-1">Iluminação restaurada</h5>
-                <p class="text-muted small mb-2">Rua Esperança, 45 - Centro</p>
-                <span class="badge bg-success">Resolvida</span>
-              </div>
-              <div class="text-end small text-muted">
-                <div>ID #166</div>
-                <div>25/10/2025</div>
+    denuncias.forEach(d => {
+        container.innerHTML += `
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h5>${d.title}</h5>
+                    <p>${d.description}</p>
+                    <span class="badge bg-primary">${d.status}</span>
+                    <br>
+                    <small>${d.created_at}</small>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+        `;
+    });
+});
+</script>
 
       <!-- Estado vazio -->
       <section id="emptyState" class="text-center py-5 d-none">

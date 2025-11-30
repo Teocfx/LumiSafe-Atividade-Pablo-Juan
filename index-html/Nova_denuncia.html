@@ -257,5 +257,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="../scripts/Nova_denuncia.js"></script>
+  const formData = new FormData();
+formData.append("title", titulo.value);
+formData.append("description", descricao.value);
+formData.append("lat", latitude);
+formData.append("lng", longitude);
+
+for (let img of inputFotos.files) {
+    formData.append("photos", img);
+}
+
+fetch("http://localhost:5000/reports", {
+    method: "POST",
+    headers: {
+        "Authorization": "Bearer " + localStorage.getItem("token")
+    },
+    body: formData
+})
+.then(r => r.json())
+.then(res => {
+    alert("Denúncia enviada!");
+    window.location.href = "dashboard.html";
+});
+  </script> 
+
 </body>
 </html>

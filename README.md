@@ -16,11 +16,23 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 - 📜 **Histórico de Ocorrências**: Acesse o histórico completo de reportes
 - 🚶 **Registro de Trajetos**: Mapeie ruas inteiras através da geolocalização
 
+
 ## 📚 Documentação
-- [Requisitos do Sistema](requisitos-lumisafe.md)
-- [Guia do Desenvolvedor](DEVELOPER.MD)
-- [Guia do Usuário](USER_GUIDE.MD)
-- [Diagrama de Classes UML](DiagramaDeClasseUML.drawio.pdf)
+
+### Requisitos
+- [Requisitos e documentação](assets/requisitos-lumisafe.md)
+- [Guia de usuário](assets/USER_GUIDE.MD)
+- [Guia desenvolvedor](assets/DEVELOPER.MD)
+
+### Diagrama
+- [Diagrama de Classes UML](assets/DiagramaDeClasseUML.drawio.pdf)
+
+
+  ### Protótipo
+  - https://www.figma.com/proto/7cGHRmeTa2OlPg1LfakbPi/LumiSafe-Prot%C3%B3tipo?node-id=2-31&p=f&t=W20v42m5gnnFsqqJ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A31
+ 
+- ### Slides do projeto
+- https://new.express.adobe.com/publishedV2/urn:aaid:sc:US:256a0254-1af9-4710-84fd-f9c6900e2726
 
 ## 🛠️ Tecnologias
 
@@ -35,6 +47,9 @@ Lumisafe é uma aplicação web que tem como objetivo melhorar a segurança nas 
 - Django 5.0
 - Django REST Framework
 - SQLite
+
+  **Prototipação**
+ - Figma
 
 ## 🚀 Como Rodar o Projeto
 
@@ -96,7 +111,7 @@ Contribuições são bem-vindas! Por favor, siga estes passos:
 
 ## 👥 Equipe
 
-- Teófilo da Costa - 1362321634
+- Teófilo da Costa RA - 1362321634
 - Flávio Eduardo Nascimento RA - 1362413582
 - Miquéias Oliveira RA - 1362219767
 - Felipe Maciel RA - 1362419474

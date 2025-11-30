@@ -84,39 +84,33 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const form = document.getElementById('loginForm');
-    const email = document.getElementById('email');
-    const senha = document.getElementById('senha');
+document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault();
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      let valid = true;
+    const data = {
+        email: document.getElementById('email').value,
+        password: document.getElementById('senha').value
+    };
 
-      // Validação do e-mail
-      const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-      if (!emailRegex.test(email.value)) {
-        email.classList.add('is-invalid');
-        valid = false;
-      } else {
-        email.classList.remove('is-invalid');
-      }
+    fetch("http://localhost:5000/auth/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    })
+    .then(r => r.json())
+    .then(res => {
+        if(res.access_token){
+            localStorage.setItem("token", res.access_token);
+            localStorage.setItem("user", JSON.stringify(res.user));
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Login inválido!");
+        }
+    })
+});
+</script>
 
-      // Validação da senha
-      if (senha.value.length < 6) {
-        senha.classList.add('is-invalid');
-        valid = false;
-      } else {
-        senha.classList.remove('is-invalid');
-      }
-
-      if (valid) {
-        alert('✅ Login válido! Redirecionando...');
-        window.location.href = "dashboard.html";
-      }
-    });
-  </script>
 
 </body>
 </html>
