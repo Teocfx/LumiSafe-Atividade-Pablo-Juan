@@ -116,5 +116,7 @@ Contribuições são bem-vindas! Por favor, siga estes passos:
 - Miquéias Oliveira RA - 1362219767
 - Felipe Maciel RA - 1362419474
 
+## 🛠️ Protótipo
+- Link para o protótipo: https://shre.ink/prototipolumisafe
 
 **Status:** 🚧 Em desenvolvimento
